@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+<link href="dropdown.css" rel="stylesheet" type="text/css">
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="parallax.css" rel="stylesheet" type="text/css">
+<link href="sticky.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.typekit.net/usz8sky.css">
+</head>
+
+<body>
+	<header class="sticky-header">
+			<div class="sitename">
+				Faux Facts
+			</div>
+			<!-- Logo -->
+			<a href="index.html"><img src="Images/Fox Logo.svg" alt="Logo"></a>
+			<ul id="menu"> 
+			<!--These are the dropdown menus for the header-->
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">About</button>
+					<div class="dropdown-content">
+			    		<a href="about.html">About us</a>
+					    <a href="stand.html">What we stand for</a>
+				    	<a href="help.html">How you can help</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Resources</button>
+					<div class="dropdown-content">
+					    <a href="other-orgs.html">Other Organizations</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Activisim</button>
+					<div class="dropdown-content">
+			    		<a href="donate.html">Donations</a>
+					    <a href="laws.html">Laws</a>
+		 			</div>
+				</div>
+			</li>
+			</ul>
+		</header>
+	<section class="page">
+		<h1>About us</h1>
+		<div class="ordered">
+			<img src="Images/Stock Fox.jpg" alt="fox" class="bubble aboutPage" style="width: clamp(200px, 40vw, 500px); height: auto; padding: 0;">
+			<div class="bubble aboutPage" style="width: 500px;">
+				<h2>About our cause</h2>
+				<p>Founded in 2026, the purpose of our organization is to provide information to the population about the things going on with fur farms, and the inhumaine ways that they are treated. <br>While we don't accept donations, we can provide links to other organizations that do</p>
+			</div>
+		</div>
+	</section>
+	
+	
+	
+	
+	<!-- footer-->
+		<footer>
+			<div style="gap: 40px;">
+				<p>&copy; Sean Kelley and Faux Facts 2026</p>
+				<div style="align-content: right;">
+					<a href="https:facebook.com"><img class="footerLogos social-icons" src="Images/Facebook.png" alt="Facebook"></a>
+					<a href="https:instagram.com"><img class="footerLogos social-icons" src="Images/instagram.png" alt="instagram"></a>
+					<a href="https:linkedin.com"><img class="footerLogos social-icons" src="Images/Linkedin.png" alt="LinkedIn"></a>
+				</div>
+				<div>
+					<p>Stay in contact: </p>
+					<input type="text" placeholder="Enter Email">
+				</div>
+			</div>
+		</footer>
+	<div id="lightbox">
+		<span id="lightbox-close">&times;</span>
+		<img id="lightbox-img" alt="">
+	</div>
+	<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("lightbox-close");
+
+const images = document.querySelectorAll(".ordered img");
+
+// Open lightbox when image is clicked
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("show");
+  });
+});
+
+// Close with X button
+closeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  lightbox.classList.remove("show");
+});
+
+// Close when clicking background
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("show");
+  }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>

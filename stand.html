@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>stand</title>
+<link href="dropdown.css" rel="stylesheet" type="text/css">
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="parallax.css" rel="stylesheet" type="text/css">
+<link href="sticky.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.typekit.net/usz8sky.css">
+</head>
+
+<body>
+	<header class="sticky-header">
+			<div class="sitename">
+				Faux Facts
+			</div>
+			<!-- Logo -->
+			<a href="index.html"><img src="Images/Fox Logo.svg" alt="Logo"></a>
+			<ul id="menu"> 
+			<!--These are the dropdown menus for the header-->
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">About</button>
+					<div class="dropdown-content">
+			    		<a href="about.html">About us</a>
+					    <a href="stand.html">What we stand for</a>
+				    	<a href="help.html">How you can help</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Resources</button>
+					<div class="dropdown-content">
+					    <a href="other-orgs.html">Other Organizations</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Activisim</button>
+					<div class="dropdown-content">
+			    		<a href="donate.html">Donations</a>
+					    <a href="laws.html">Laws</a>
+		 			</div>
+				</div>
+			</li>
+			</ul>
+		</header>
+	<section class="page">
+		<h1>What we stand for</h1>
+		<div class="ordered">
+			<div class="bubble fade standPage">
+				<h2>Our beliefs</h2>
+				<p>Animal rights is the ethical belief that animals deserve to live free from exploitation, abuse, and unnecessary suffering, and that their interests should be considered alongside human interests. Unlike general animal welfare, which focuses on minimizing harm while still using animals for food, clothing, or research, the animal rights perspective asserts that animals have inherent value and should not be treated as property or commodities. This philosophy underpins campaigns against practices such as fur farming, factory farming, animal testing, and entertainment that involves animals, advocating instead for alternatives that respect their autonomy, natural behaviors, and well-being.</p>
+				
+			</div>
+			<img src="Images/Animal-Rights.avif" alt="Animal Rights Photo" class="standImage fade">
+			<img src="Images/MinkinCageFurFarming.png" alt="Minx in a cage at a fur farm" class="standImage fade">
+			<div class="bubble fade standPage">
+				<h2>Fur Farms</h2>
+				<p>Fur farms are industrial facilities where animals are bred and raised specifically for their fur, which is used in clothing and fashion products such as coats, hats, and trim. The animals most commonly raised on fur farms include mink, foxes, raccoon dogs, and sometimes chinchillas. Unlike animals raised for food, these animals are kept solely for their pelts, meaning the quality of their fur is the primary concern. On many farms, the animals are housed in small wire cages arranged in long rows inside sheds or outdoor structures. Because these species are naturally wide-ranging and active in the wild, the confined environment of a cage can be very different from their natural habitat. <br>The conditions on fur farms can have significant effects on animal welfare. Animals in these facilities often have limited space and little opportunity to perform natural behaviors like running, digging, swimming, or hunting. As a result, some animals develop stress-related behaviors such as pacing, biting the cage bars, or self-mutilation. At the end of their lives, the animals are typically killed in ways intended to preserve the fur, such as gassing or electrocution. Critics argue that these practices raise serious ethical concerns about animal treatment, while supporters of the industry often argue that farms are regulated and provide livelihoods for farmers. Because of these debates, fur farming has become a controversial issue in many countries, with some places banning or restricting the practice altogether.</p>
+			</div>
+		</div>
+	</section>
+	<!-- footer-->
+		<footer>
+			<div style="gap: 40px;">
+				<p>&copy; Sean Kelley and Faux Facts 2026</p>
+				<div style="align-content: right;">
+					<a href="https:facebook.com"><img class="footerLogos social-icons" src="Images/Facebook.png" alt="Facebook"></a>
+					<a href="https:instagram.com"><img class="footerLogos social-icons" src="Images/instagram.png" alt="instagram"></a>
+					<a href="https:linkedin.com"><img class="footerLogos social-icons" src="Images/Linkedin.png" alt="LinkedIn"></a>
+				</div>
+				<div>
+					<p>Stay in contact: </p>
+					<input type="text" placeholder="Enter Email">
+				</div>
+			</div>
+		</footer>
+	<div id="lightbox">
+		<span id="lightbox-close">&times;</span>
+		<img id="lightbox-img" alt="">
+	</div>
+	<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("lightbox-close");
+
+const images = document.querySelectorAll(".ordered img");
+
+// Open lightbox when image is clicked
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("show");
+  });
+});
+
+// Close with X button
+closeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  lightbox.classList.remove("show");
+});
+
+// Close when clicking background
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("show");
+  }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("show");
+  }
+});
+</script>
+</body>
+</html>

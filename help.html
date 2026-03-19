@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>help</title>
+<link href="dropdown.css" rel="stylesheet" type="text/css">
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="parallax.css" rel="stylesheet" type="text/css">
+<link href="sticky.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.typekit.net/usz8sky.css">
+</head>
+
+<body>
+	<header class="sticky-header">
+			<div class="sitename">
+				Faux Facts
+			</div>
+			<!-- Logo -->
+			<a href="index.html"><img src="Images/Fox Logo.svg" alt="Logo"></a>
+			<ul id="menu"> 
+			<!--These are the dropdown menus for the header-->
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">About</button>
+					<div class="dropdown-content">
+			    		<a href="about.html">About us</a>
+					    <a href="stand.html">What we stand for</a>
+				    	<a href="help.html">How you can help</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Resources</button>
+					<div class="dropdown-content">
+					    <a href="other-orgs.html">Other Organizations</a>
+		 			</div>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+  				<button class="dropbtn">Activisim</button>
+					<div class="dropdown-content">
+			    		<a href="donate.html">Donations</a>
+					    <a href="laws.html">Laws</a>
+		 			</div>
+				</div>
+			</li>
+			</ul>
+		</header>
+	
+	<h1>How you can help</h1>
+	<section class="ordered">
+		<div class="bubble" style="width: 500px; height: auto;" >
+			<h2>What you can do</h2>
+			<p>There are many ways that you can help, and part of our purpose is to direct people to the different ways that you can<br>The two main ways would be by donating to another organization that accepts donations, or by pushing to get laws passed or changed to make things rougher on fur farms, or even outright banning them</p>
+		</div>
+		<img src="Images/OHFurFarm011425_DSC2476.avif" alt="fox in captivity" class="bubble" style="width: auto; height: clamp(200px, 40vw, 300px); padding: 0;">
+	</section>
+	<br>
+	<section>
+		<div class="ordered">
+			<div style="text-align: center;">
+				<h2>Ways to help</h2>
+				<p>There are multiple ways to help, and clicking a link below will direct you to pages that will provide more information</p>
+			</div>
+		</div>
+		<br>
+		<div class="ordered">
+			<a href="donate.html" class="bubble helpPage hover fade">
+				<h2>Donations</h2>
+				<p>To learn about the organizations you can donate to, click here!</p>
+			</a>
+			<a href="laws.html" class="bubble helpPage hover fade">
+				<h2>Legislation</h2>
+				<p>To learn about laws that are currently in place and those we are looking to push, click here!</p>
+			</a>
+		</div>
+	</section>
+	<br>
+	<!-- footer-->
+		<footer>
+			<div style="gap: 40px;">
+				<p>&copy; Sean Kelley and Faux Facts 2026</p>
+				<div style="align-content: right;">
+					<a href="https:facebook.com"><img class="footerLogos social-icons" src="Images/Facebook.png" alt="Facebook"></a>
+					<a href="https:instagram.com"><img class="footerLogos social-icons" src="Images/instagram.png" alt="instagram"></a>
+					<a href="https:linkedin.com"><img class="footerLogos social-icons" src="Images/Linkedin.png" alt="LinkedIn"></a>
+				</div>
+				<div>
+					<p>Stay in contact: </p>
+					<input type="text" placeholder="Enter Email">
+				</div>
+			</div>
+		</footer>
+	<div id="lightbox">
+		<span id="lightbox-close">&times;</span>
+		<img id="lightbox-img" alt="">
+	</div>
+	<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("lightbox-close");
+
+const images = document.querySelectorAll(".ordered img");
+
+// Open lightbox when image is clicked
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("show");
+  });
+});
+
+// Close with X button
+closeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  lightbox.classList.remove("show");
+});
+
+// Close when clicking background
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("show");
+  }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("show");
+  }
+});
+</script>
+</body>
+</html>
