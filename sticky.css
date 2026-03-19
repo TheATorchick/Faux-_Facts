@@ -4,7 +4,7 @@
 .sticky-header {
     position: sticky;
     top: 0; /* This is the key: it sticks to the top of the viewport */
-    background-color: #ffff; /* Add a background color so content doesn't show through */
+    background-color: #FF9F1D; /* Add a background color so content doesn't show through */
     color: #FFFFFF;
     padding: 10px;
     z-index: 1000; /* Ensures the header is on top of other content */
